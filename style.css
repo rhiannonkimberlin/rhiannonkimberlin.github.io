@@ -19,6 +19,12 @@ div.page{
 div.portfoliopicture{
     width: 50%;
     float: left;
+    display: flex;  
+    background-color: #F9F6F8;  
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    left: 0;
 }
 div.portfoliodescription{
     width: 50%;
@@ -40,9 +46,10 @@ div.bio{
 img.portfoliopicture{
     max-width: 100%;
     max-height: 100%;
-    display: block;
     position: -webkit-sticky;
     position: sticky;
+    top: 0;
+    left: 0;
 }
 h1{
     font-size: 85px;
@@ -57,7 +64,7 @@ h4{
     font-family: Oswald;
 }
 a.links{
-    background-color: #F9F6F8;
+    background-color: #FFFFFF;
 	color: #241820;
 	text-decoration: none;
 	font-size: 16px;
@@ -79,11 +86,108 @@ img.projects{
     border: #241820 3px solid;
     
 }
-div.projects{
+div.projects1{
     display: block;
 }
-figure{
-    display: inline-block;
-    padding:10px;
+figure.projects{
+    font-family: 'Oswald', sans-serif;
+    position: relative;
+    overflow: hidden;
+     margin: 10px;
+     min-width: 220px;
+     max-width: 310px;
+     max-height: 220px;
+     width: 100%;
+     background: #000000;
+     color: #ffffff;
+     text-align: center;
+     box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 
 }
+figure.projects * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+figure.projects img{
+    opacity: 0.4;
+    width: 350px;
+}
+
+figure.projects figcaption{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+figure.projects h6 {
+    position: absolute;
+    left: 40px;
+    right: 40px;
+    display: inline-block;
+    background: #000000;
+    -webkit-transform: skew(-10deg) rotate(-10deg) translate(0, -50%);
+    transform: skew(-10deg) rotate(-10deg) translate(0, -50%);
+    padding: 12px 5px;
+    margin: 0;
+    top: 50%;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  figure.projects h6 span {
+    font-weight: 800;
+  }
+
+  figure.projects:before {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    content: '';
+    background: #ffffff;
+    position: absolute;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    -webkit-transform: rotate(110deg) translateY(-50%);
+    transform: rotate(110deg) translateY(-50%);
+  }
+  
+  figure.projects a {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 1;
+  }
+  
+  figure.projects.blue {
+    background: #123851;
+  }
+  
+  figure.projects.blue h6 {
+    background: #0a212f;
+  }
+    
+  figure.projects:hover img,
+  figure.projects.hover img {
+    opacity: 1;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  
+  figure.projects:hover h6,
+  figure.projects.hover h6 {
+    -webkit-transform: skew(-10deg) rotate(-10deg) translate(-150%, -50%);
+    transform: skew(-10deg) rotate(-10deg) translate(-150%, -50%);
+  }
+  
+  figure.projects:hover:before,
+  figure.projects.hover:before {
+    -webkit-transform: rotate(110deg) translateY(-150%);
+    transform: rotate(110deg) translateY(-150%);
+  }
